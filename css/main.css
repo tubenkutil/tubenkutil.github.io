@@ -1,0 +1,99 @@
+html,
+body {
+	height: 100%;
+}
+
+
+img,
+video,
+embed,
+iframe {
+	max-width: 100%;
+	height: auto;
+}
+
+
+.grid-list {
+	padding-left: 0;
+	margin-left: 0;
+	list-style: none;
+	text-align: justify;
+}
+
+.grid-list:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+.grid-list__item,
+.grid-list__placeholder {
+	display: inline-block;
+	width: 22%;
+	text-align: left;
+}
+
+
+.grid-list__item {
+	margin-bottom: 20px;
+}
+
+
+.l-home .site-masthead {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: transparent;
+}
+
+.site-masthead__toggle {
+	position: relative;
+	z-index: 20;
+	background-color: #fff;
+}
+
+.site-masthead__menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	background: #000;
+	transition: all .3s ease-out;
+	opacity: 0;
+}
+
+
+.show-nav .site-masthead__menu {
+	opacity: 1;
+}
+
+
+.site-masthead__primary {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+
+.l-home .site-content {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	background: url('http://fillmurray.com/1000/1000') center center no-repeat;	
+	background-size: cover;
+}
+
+.l-home .site-content:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
