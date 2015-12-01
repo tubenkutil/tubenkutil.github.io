@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ben Kutil’s Graphic Design Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--
+    @NOTE Choose a "reset" stylesheet
+    I've enabled santize by default, but you can also choose
+    Normalize
+    Eric Meyer's Reset
+    -->
+    <link rel="stylesheet" href="../css/vendor/sanitize.css">
+    <!-- <link rel="stylesheet" href="css/vendor/normalize.css"> -->
+    <!-- <link rel="stylesheet" href="css/vendor/reset.css"> -->
+
+    <!--
+    @NOTE Enable Skeleton's Grid
+    -->
+    <link rel="stylesheet" href="../css/vendor/skeleton.css">
+
+    <!--
+    @NOTE Enable Boilerplate's helpers
+    This include some simple utility classes
+    -->
+    <link rel="stylesheet" href="../css/vendor/boilerplate.css">
+
+    <!--
+    @NOTE Enable Skeleton's basic styling
+    This styles things like buttons and tables.
+    -->
+    <!-- <link rel="stylesheet" href="css/vendor/skeleton-styles.css"> -->
+
+
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <script>
+		/*!
+loadCSS: load a CSS file asynchronously.
+[c]2015 @scottjehl, Filament Group, Inc.
+Licensed MIT
+*/
+(function(w){
+	"use strict";
+	/* exported loadCSS */
+	var loadCSS = function( href, before, media ){
+		// Arguments explained:
+		// `href` [REQUIRED] is the URL for your CSS file.
+		// `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+			// By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+		// `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+		var doc = w.document;
+		var ss = doc.createElement( "link" );
+		var ref;
+		if( before ){
+			ref = before;
+		}
+		else {
+			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+			ref = refs[ refs.length - 1];
+		}
+
+		var sheets = doc.styleSheets;
+		ss.rel = "stylesheet";
+		ss.href = href;
+		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+		ss.media = "only x";
+
+		// Inject link
+			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+		// A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
+		var onloadcssdefined = function( cb ){
+			var resolvedHref = ss.href;
+			var i = sheets.length;
+			while( i-- ){
+				if( sheets[ i ].href === resolvedHref ){
+					return cb();
+				}
+			}
+			setTimeout(function() {
+				onloadcssdefined( cb );
+			});
+		};
+
+		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+		ss.onloadcssdefined = onloadcssdefined;
+		onloadcssdefined(function() {
+			ss.media = media || "all";
+		});
+		return ss;
+	};
+	// commonjs
+	if( typeof module !== "undefined" ){
+		module.exports = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ));
+
+    </script>
+    
+    
+    <script>
+    	loadCSS('../css/custom.css');
+    </script>
+    
+    <noscript>
+    	<link rel="stylesheet" href="../css/custom.css">
+	</noscript>
+
+    <!-- Modernizr detects a browsers different capabilities -->
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body class="l-post-detail">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header class="site-masthead" role="banner">
+    	<div class="container">
+			<h1 class="site-masthead__logo">Ben Kutil</h1>
+			<button class="site-masthead__toggle" id="js-toggle">Menu</button>    
+			<nav class="site-masthead__menu" role="navigation">
+				<strong class="visuallyhidden">Primary Navigation</strong>
+			
+				<ul class="site-masthead__primary nav" role="menubar">
+					<li class="primary__item">
+						<a class="primary__link" href="posts/index.html">
+							Posts
+						</a>
+					</li>
+					<li class="primary__item">
+						<a class="primary__link" href="projects/index.html">
+							Projects
+						</a>
+					</li>
+					<li class="primary__item">
+						<a class="primary__link" href="about/index.html">
+							About
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+    </header>
+    
+    
+    <div class="site-content">
+    	<article class="entry">
+    		<header class="entry__header">
+				<div class="container">
+					<h1 class="entry__heading">
+						Post Item Title
+					</h1>
+					<p class="entry__intro">
+						My super cool project about making websites for christmas cookies
+					</p>
+				</div>    		
+    		</header>
+    		
+    		<div class="entry__content">
+    		
+    			<div class="container">
+					
+					<p>This is a standard paragraph created using the WordPress TinyMCE text editor. It has a <strong>strong tag</strong>, an <em>em tag</em> and a <del>strikethrough</del> which is actually just the del element. There are a few more inline elements which are not in the WordPress admin but we should check for incase your users get busy with the copy and paste. These include <cite>citations</cite>, <abbr title="abbreviation">abbr</abbr>, bits of <code>code</code> and <var>variables</var>, <q>inline quotations</q>, <ins datetime="2011-12-08T20:19:53+00:00">inserted text</ins>, text that is <s>no longer accurate</s> or something <mark>so important</mark> you might want to mark it. We can also style subscript and superscript characters like C0<sub>2</sub>, here is our 2<sup>nd</sup> example. If they are feeling non-semantic they might even use <b>bold</b>, <i>italic</i>, <big>big</big> or <small>small</small> elements too.&nbsp;Incidentally, these HTML4.01 tags have been given new life and semantic meaning in HTML5, you may be interested in reading this <a title="HTML5 Semantics" href="http://csswizardry.com/2011/01/html5-and-text-level-semantics">article by Harry Roberts</a> which gives a nice excuse to test a link.&nbsp;&nbsp;It is also worth noting in the "kitchen sink" view you can also add <span style="text-decoration: underline;">underline</span>&nbsp;styling and set <span style="color: #ff0000;">text color</span> with pesky inline CSS.</p>
+					<p style="text-align: left;">Additionally, WordPress also sets text alignment with inline styles, like this left aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="text-align: right;">This is a right aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="text-align: justify;">This is a justified paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="padding-left: 30px;">Finally, you also have the option of an indented paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p> <p>And last, and by no means least, users can also apply the <code>Address</code> tag to text like this:</p> <address>123 Example Street,
+					Testville,
+					West Madeupsburg,
+					CSSland,
+					1234</address> <p>...so there you have it, all our text elements</p>
+    			</div>
+				 <!-- end .container -->
+				 
+				 <picture class="entry__full-src">
+				 	<source srcset="http://lorempixel.com/768/420, http://lorempixel.com/1500/1000 2x" media="(min-width: 768px)">
+				 	<img srcset="http://lorempixel.com/320/320, http://lorempixel.com/1080/1080 2x" alt="">
+				 </picture>				 
+				    		
+    		</div>
+    	</article>
+    </div>
+    
+    
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!--
+    @NOTE Google Analytics:
+    change UA-XXXXX-X to be your site's ID.
+    -->
+    <!-- <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script> -->
+  </body>
+</html>
