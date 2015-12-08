@@ -170,3 +170,37 @@ h3 {
 	color: #fff;
 	background-color: rgba(200, 175, 10, .8);
 }
+
+
+.featured-list__item {
+	overflow: hidden;
+}
+
+
+.featured-list__item,
+.featured-item__link {
+	position: relative;
+}
+
+
+.featured-item__link {
+	display: block;
+	padding: 200px 0;
+}
+
+
+.featured-item__body {
+	position: relative;
+	z-index: 10;
+}
+
+
+.featured-item__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: auto;
+}
+
