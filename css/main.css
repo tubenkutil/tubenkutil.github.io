@@ -161,3 +161,12 @@ h3 {
 	z-index: 10;
 	width: 100%;
 }
+
+
+.knockout {
+	display: inline-block;
+	padding: .5em;
+	font-size: 36px;
+	color: #fff;
+	background-color: rgba(200, 175, 10, .8);
+}
